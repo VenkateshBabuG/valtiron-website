@@ -1,0 +1,5 @@
+/* VALTIRON form refinements; retains original theme and spacing */
+.v-phone-group { display:flex; gap:10px; margin-top:8px; min-width:0; }
+.v-phone-group select { flex:0 0 190px; min-width:0; }
+.v-phone-group input { flex:1 1 auto; min-width:0; }
+@media (max-width: 640px) { .v-phone-group { flex-wrap:wrap; } .v-phone-group select, .v-phone-group input { flex:1 1 100%; } }
