@@ -1,32 +1,242 @@
-/* VALTIRON: additive motion layer. Original styles.css is unchanged. */
+
+/*
+ * VALTIRON DOORS & FRAMES
+ * Dynamic Animations
+ *
+ * Preserves existing styles.css and website layout.
+ * Compatible with existing script.js.
+ * Respects reduced-motion accessibility settings.
+ */
+
 @media (prefers-reduced-motion: no-preference) {
-  html { scroll-behavior: smooth; }
-  .valtiron-motion .hero .eyebrow { animation: v-enter .65s both .08s; }
-  .valtiron-motion .hero h1 { animation: v-enter .85s cubic-bezier(.2,.8,.2,1) both .16s; }
-  .valtiron-motion .hero-copy > p { animation: v-enter .85s both .32s; }
-  .valtiron-motion .hero .actions { animation: v-enter .85s both .46s; }
-  .valtiron-motion .hero-foot { animation: v-enter .85s both .56s; }
-  .valtiron-motion .hero-visual { animation: v-visual 1.15s cubic-bezier(.2,.8,.2,1) both .18s; }
-  .valtiron-motion .hero-visual img { animation: v-breathe 9s ease-in-out infinite alternate; }
-  .valtiron-motion .v-reveal { opacity:0; transform:translateY(30px); transition: opacity .72s ease, transform .8s cubic-bezier(.2,.8,.2,1); transition-delay:var(--v-delay,0ms); }
-  .valtiron-motion .v-reveal.v-visible { opacity:1; transform:translateY(0); }
-  .product { transition: transform .3s ease, box-shadow .3s ease; }
-  .product:hover { transform:translateY(-7px); box-shadow:0 18px 40px rgba(0,0,0,.15); }
-  .product img { transition:transform .6s cubic-bezier(.2,.8,.2,1); }
-  .product:hover img { transform:scale(1.055); }
-  .btn, .footer-quote, .navcta { transition:transform .22s ease, filter .22s ease, box-shadow .22s ease; }
-  .btn:hover, .footer-quote:hover, .navcta:hover { transform:translateY(-3px); filter:brightness(1.06); box-shadow:0 8px 24px rgba(0,0,0,.12); }
-  .btn:active, .footer-quote:active { transform:translateY(0); }
-  .header nav a:not(.navcta), .footer-links a { transition:color .2s ease, opacity .2s ease; }
-  .header nav a:not(.navcta):hover, .footer-links a:hover { opacity:.72; }
-  .v-success-pop { animation:v-confirm .5s cubic-bezier(.2,.9,.2,1) both; }
-  @keyframes v-enter { from {opacity:0; transform:translateY(24px)} to {opacity:1;transform:translateY(0)} }
-  @keyframes v-visual { from {opacity:0;transform:translateX(35px) scale(.98)} to {opacity:1;transform:translateX(0) scale(1)} }
-  @keyframes v-breathe { from {transform:scale(1)} to {transform:scale(1.035)} }
-  @keyframes v-confirm { from {opacity:0;transform:translateY(10px) scale(.985)} to {opacity:1;transform:translateY(0) scale(1)} }
+
+  /* Smooth page scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* =====================================
+     1. HERO SECTION ENTRANCE
+     ===================================== */
+
+  .valtiron-motion .hero .eyebrow {
+    animation: v-enter 0.7s ease both 0.08s;
+  }
+
+  .valtiron-motion .hero h1 {
+    animation: v-enter 0.9s
+      cubic-bezier(.2,.8,.2,1) both 0.18s;
+  }
+
+  .valtiron-motion .hero-copy > p {
+    animation: v-enter 0.9s ease both 0.35s;
+  }
+
+  .valtiron-motion .hero .actions {
+    animation: v-enter 0.9s ease both 0.5s;
+  }
+
+  .valtiron-motion .hero-foot {
+    animation: v-enter 0.9s ease both 0.65s;
+  }
+
+  /* Hero door image entrance */
+  .valtiron-motion .hero-visual {
+    animation: v-visual 1.2s
+      cubic-bezier(.2,.8,.2,1) both 0.2s;
+  }
+
+  /* Gentle floating / breathing image */
+  .valtiron-motion .hero-visual img {
+    animation: v-breathe 7s ease-in-out
+      infinite alternate;
+  }
+
+  /* =====================================
+     2. SCROLL REVEAL ANIMATIONS
+     ===================================== */
+
+  .valtiron-motion .v-reveal {
+    opacity: 0;
+    transform: translateY(45px);
+
+    transition:
+      opacity 0.85s ease,
+      transform 0.85s cubic-bezier(.2,.8,.2,1);
+
+    transition-delay: var(--v-delay, 0ms);
+  }
+
+  .valtiron-motion .v-reveal.v-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* =====================================
+     3. PRODUCT CARD ANIMATIONS
+     ===================================== */
+
+  .product {
+    transition:
+      transform 0.4s ease,
+      box-shadow 0.4s ease;
+  }
+
+  .product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+  }
+
+  /* Fix scroll reveal / hover conflict */
+  .valtiron-motion .product.v-reveal.v-visible:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+  }
+
+  /* Product image zoom */
+  .product img {
+    transition:
+      transform 0.65s cubic-bezier(.2,.8,.2,1);
+  }
+
+  .product:hover img {
+    transform: scale(1.07);
+  }
+
+  /* =====================================
+     4. GOLD BUTTON INTERACTIONS
+     ===================================== */
+
+  .btn,
+  .footer-quote,
+  .navcta {
+    transition:
+      transform 0.3s ease,
+      filter 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .btn:hover,
+  .footer-quote:hover,
+  .navcta:hover {
+    transform: translateY(-4px);
+    filter: brightness(1.06);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+  }
+
+  .btn:active,
+  .footer-quote:active,
+  .navcta:active {
+    transform: translateY(0);
+  }
+
+  /* =====================================
+     5. NAVIGATION LINK EFFECTS
+     ===================================== */
+
+  .header nav a:not(.navcta),
+  .footer-links a {
+    transition:
+      color 0.25s ease,
+      opacity 0.25s ease;
+  }
+
+  .header nav a:not(.navcta):hover,
+  .footer-links a:hover {
+    opacity: 0.72;
+  }
+
+  /* =====================================
+     6. FORM SUCCESS ANIMATION
+     ===================================== */
+
+  #form-status.v-success-pop {
+    animation: v-confirm 0.55s
+      cubic-bezier(.2,.9,.2,1) both;
+  }
+
+  /* =====================================
+     7. ANIMATION KEYFRAMES
+     ===================================== */
+
+  @keyframes v-enter {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes v-visual {
+    from {
+      opacity: 0;
+      transform: translateX(45px) scale(0.96);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+  }
+
+  @keyframes v-breathe {
+    from {
+      transform: scale(1);
+    }
+
+    to {
+      transform: scale(1.045);
+    }
+  }
+
+  @keyframes v-confirm {
+    from {
+      opacity: 0;
+      transform: translateY(18px) scale(0.97);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
 }
+
+/* =====================================
+   8. ACCESSIBILITY: REDUCED MOTION
+   ===================================== */
+
 @media (prefers-reduced-motion: reduce) {
-  html {scroll-behavior:auto}
-  .v-reveal {opacity:1!important;transform:none!important}
-  .product, .product img, .btn, .footer-quote, .navcta {animation:none!important;transition:none!important}
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .v-reveal,
+  .v-reveal.v-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .hero .eyebrow,
+  .hero h1,
+  .hero-copy > p,
+  .hero .actions,
+  .hero-foot,
+  .hero-visual,
+  .hero-visual img,
+  .product,
+  .product img,
+  .btn,
+  .footer-quote,
+  .navcta,
+  #form-status {
+    animation: none !important;
+    transition: none !important;
+  }
 }
