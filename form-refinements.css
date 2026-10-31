@@ -1,0 +1,24 @@
+/* VALTIRON Option C — spacious contact form only. */
+/* Preserves existing colors, typography, product sections and navigation. */
+#rfq.v-spacious-form { display:flex; flex-direction:column; gap:22px; }
+#rfq.v-spacious-form .form-row { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+#rfq.v-spacious-form .form-row.v-spacious-stack { grid-template-columns:minmax(0,1fr); }
+#rfq.v-spacious-form label { display:block; min-width:0; }
+#rfq.v-spacious-form label > input,
+#rfq.v-spacious-form label > select,
+#rfq.v-spacious-form label > textarea { width:100%; box-sizing:border-box; margin-top:10px; }
+#rfq.v-spacious-form input,
+#rfq.v-spacious-form select { min-height:62px; }
+#rfq.v-spacious-form textarea { min-height:170px; resize:vertical; }
+#rfq.v-spacious-form .v-phone-group { display:grid; grid-template-columns:125px minmax(0,1fr); gap:12px; margin-top:10px; min-width:0; }
+#rfq.v-spacious-form .v-phone-group select,
+#rfq.v-spacious-form .v-phone-group input { width:100%; min-width:0; margin-top:0; box-sizing:border-box; }
+#rfq.v-spacious-form .v-phone-group select { padding-left:9px; padding-right:4px; font-size:14px; }
+#rfq.v-spacious-form .submit { min-height:64px; }
+#rfq.v-spacious-form #form-status { margin-top:0; }
+@media(max-width:680px) {
+  #rfq.v-spacious-form { gap:18px; }
+  #rfq.v-spacious-form .form-row { grid-template-columns:minmax(0,1fr); gap:18px; }
+  #rfq.v-spacious-form .v-phone-group { grid-template-columns:110px minmax(0,1fr); gap:8px; }
+  #rfq.v-spacious-form input, #rfq.v-spacious-form select { min-height:56px; }
+}
