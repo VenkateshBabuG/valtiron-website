@@ -1,7 +1,13 @@
-VALTIRON Option C Spacious Form
+VALTIRON 2.0 — PARTNER PRESENTATION DEMO
 
-Upload these four files to the root of your GitHub Pages repository: index.html, form-refinements.css, script.js, animations.css. Keep styles.css and assets unchanged.
+Open index.html in Chrome or Edge. No installation or hosting needed.
 
-Only the quote form layout is changed; the current AJAX FormSubmit handler and animation code are retained from the previous local package. If you edited these scripts after that package, retain your newer scripts instead.
+Source: iCLEAN Hollow Metal Systems (IHMS) 12-page Company Profile & Catalogue. Product categories reviewed against pages 4–10. Flooring is not confirmed in this catalog and is intentionally excluded.
 
-Test a quote submission and check sales@valtirondoors.com after publishing. Phone remains optional; digits only, 4–15 digits allowed.
+Illustrative architectural concept photos are NOT manufacturer product photographs. Catalog pages are labeled where used. Do not claim specific certifications, availability, pricing or US code approvals without verification.
+
+The RFQ form uses FormSubmit AJAX to sales@valtirondoors.com and may send real inquiries. For presentation, do not submit test messages unless you intend to email the business.
+
+Logo is the original supplied VALTIRON asset, unchanged.
+
+Not a production deployment. Live site unaffected.
